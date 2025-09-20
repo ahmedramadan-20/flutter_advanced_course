@@ -2,5 +2,5 @@
 
 following omar ahmed on his advanced course
 
-## 🧮 system design
+## 🧑‍🎨 system design
 ![system design](image.png)
