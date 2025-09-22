@@ -12,10 +12,11 @@ class DocApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+
       designSize: const Size(375, 812),
       minTextAdapt: true,
       child: MaterialApp(
-        title: 'Doc App',
+        title: 'Doc Application',
         theme: ThemeData(
           primaryColor: ColorsManager.mainBlue,
           scaffoldBackgroundColor: Colors.white
