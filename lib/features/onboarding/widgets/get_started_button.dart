@@ -13,8 +13,7 @@ class GetStartedButton extends StatelessWidget {
       onPressed: () {
         context.pushnamed(Routes.loginScreen);
       },
-      
-      
+
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.blue,
         tapTargetSize:
@@ -22,7 +21,9 @@ class GetStartedButton extends StatelessWidget {
         maximumSize: Size.fromHeight(50.h),
         minimumSize: Size.fromHeight(50.h),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.r),
+          borderRadius: BorderRadius.circular(
+            10.r,
+          ),
         ),
       ),
       child: Text(
