@@ -13,6 +13,7 @@ class AppTextFormField extends StatelessWidget {
   final bool? isObscureText;
   final Widget? suffixIcon;
   final Color? backgroundColor;
+  final TextInputType keyboardType;
 
   const AppTextFormField({
     super.key,
@@ -24,12 +25,13 @@ class AppTextFormField extends StatelessWidget {
     required this.hintText,
     this.isObscureText,
     this.suffixIcon,
-    this.backgroundColor,
+    this.backgroundColor, required this.keyboardType,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: keyboardType,
       decoration: InputDecoration(
         filled: true,
         fillColor:
