@@ -55,10 +55,12 @@ class _LoginScreenState
                   child: Column(
                     children: [
                       AppTextFormField(
+                        keyboardType: TextInputType.emailAddress,
                         hintText: 'Email',
                       ),
                       verticalSpace(18),
                       AppTextFormField(
+                        keyboardType: TextInputType.visiblePassword,
                         hintText: 'Password',
                         isObscureText:
                             isObscureText,
