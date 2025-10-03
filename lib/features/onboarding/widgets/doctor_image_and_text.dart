@@ -8,7 +8,6 @@ class DoctorImageAndText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-
       children: [
         SvgPicture.asset(
           "assets/svgs/docdoc_logo_low_opacity.svg",
@@ -35,16 +34,13 @@ class DoctorImageAndText extends StatelessWidget {
           bottom: 30,
           left: 0,
           right: 0,
-          child: 
-              Text(
-                "Best Doctor\nAppointment App",
-                textAlign: TextAlign.center,
-                style: TextStyles.font32BlueBold.copyWith(height: 1.4)
-              ),
-             
-            
-          
-        )
+          child: Text(
+            "Best Doctor\nAppointment App",
+            textAlign: TextAlign.center,
+            style: TextStyles.font32BlueBold
+                .copyWith(height: 1.4),
+          ),
+        ),
       ],
     );
   }

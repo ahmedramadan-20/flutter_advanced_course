@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
 /// Navigator extension to simplify navigation calls
 /// Usage:
 /// context.pushnamed(routeName);
 /// context.pushReplacementNamed(routeName);
-/// 
+///
 extension Navigation on BuildContext {
   Future<dynamic> pushnamed(
     String routeName, {
@@ -20,7 +21,10 @@ extension Navigation on BuildContext {
   }) {
     return Navigator.of(
       this,
-    ).pushReplacementNamed(routeName, arguments: arguments);
+    ).pushReplacementNamed(
+      routeName,
+      arguments: arguments,
+    );
   }
 
   Future<dynamic> pushNamedAndRemoveUntil(
@@ -28,12 +32,14 @@ extension Navigation on BuildContext {
     Object? arguments,
     required RoutePredicate predicate,
   }) {
-    return Navigator.of(this).pushNamedAndRemoveUntil(
+    return Navigator.of(
+      this,
+    ).pushNamedAndRemoveUntil(
       routeName,
       predicate,
       arguments: arguments,
     );
   }
-  void pop ()=>
-      Navigator.of(this).pop();
+
+  void pop() => Navigator.of(this).pop();
 }

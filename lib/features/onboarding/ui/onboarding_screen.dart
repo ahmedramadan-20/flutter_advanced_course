@@ -24,17 +24,20 @@ class OnBoardingScreen extends StatelessWidget {
                 SizedBox(height: 30.h),
                 const DoctorImageAndText(),
                 Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: 30.0.w),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 30.0.w,
+                  ),
                   child: Column(
                     children: [
                       Text(
                         "Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.",
                         style: TextStyles
                             .font13GreyRegular,
-                            textAlign: TextAlign.center,
+                        textAlign:
+                            TextAlign.center,
                       ),
                       SizedBox(height: 30.h),
-                      const GetStartedButton()
+                      const GetStartedButton(),
                     ],
                   ),
                 ),

@@ -20,6 +20,7 @@ class GetStartedButton extends StatelessWidget {
             MaterialTapTargetSize.shrinkWrap,
         maximumSize: Size.fromHeight(50.h),
         minimumSize: Size.fromHeight(50.h),
+
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(
             10.r,
