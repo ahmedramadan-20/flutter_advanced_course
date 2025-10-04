@@ -25,7 +25,8 @@ class AppTextFormField extends StatelessWidget {
     required this.hintText,
     this.isObscureText,
     this.suffixIcon,
-    this.backgroundColor, required this.keyboardType,
+    this.backgroundColor,
+    required this.keyboardType,
   });
 
   @override

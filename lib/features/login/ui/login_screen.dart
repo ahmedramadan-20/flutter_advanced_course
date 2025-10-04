@@ -31,8 +31,7 @@ class _LoginScreenState
             vertical: 30.h,
           ),
           child: SingleChildScrollView(
-            physics:
-                BouncingScrollPhysics(),
+            physics: BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment:
                   CrossAxisAlignment.start,
@@ -55,12 +54,16 @@ class _LoginScreenState
                   child: Column(
                     children: [
                       AppTextFormField(
-                        keyboardType: TextInputType.emailAddress,
+                        keyboardType:
+                            TextInputType
+                                .emailAddress,
                         hintText: 'Email',
                       ),
                       verticalSpace(18),
                       AppTextFormField(
-                        keyboardType: TextInputType.visiblePassword,
+                        keyboardType:
+                            TextInputType
+                                .visiblePassword,
                         hintText: 'Password',
                         isObscureText:
                             isObscureText,
