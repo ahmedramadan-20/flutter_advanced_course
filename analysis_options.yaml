@@ -7,4 +7,4 @@ linter:
 
 formatter:
   # The page_width property is now correctly a top-level key
-  page_width: 50
+  page_width: 120

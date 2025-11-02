@@ -13,8 +13,9 @@ class AppTextFormField extends StatelessWidget {
   final bool? isObscureText;
   final Widget? suffixIcon;
   final Color? backgroundColor;
-  final TextInputType keyboardType;
-
+  final TextInputType? keyboardType;
+  final TextEditingController? controller;
+  final Function(String?) validator;
   const AppTextFormField({
     super.key,
     this.contentPadding,
@@ -26,55 +27,50 @@ class AppTextFormField extends StatelessWidget {
     this.isObscureText,
     this.suffixIcon,
     this.backgroundColor,
-    required this.keyboardType,
+    this.keyboardType,
+    this.controller,
+    required this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       keyboardType: keyboardType,
       decoration: InputDecoration(
         filled: true,
-        fillColor:
-            backgroundColor ??
-            ColorsManager.moreLightGrey,
+        fillColor: backgroundColor ?? ColorsManager.moreLightGrey,
         isDense: true,
-        contentPadding:
-            contentPadding ??
-            EdgeInsets.symmetric(
-              horizontal: 20.w,
-              vertical: 18.h,
-            ),
+        contentPadding: contentPadding ?? EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
         focusedBorder:
             focusedBorder ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(
-                16.r,
-              ),
-              borderSide: const BorderSide(
-                color: ColorsManager.mainBlue,
-                width: 1.3,
-              ),
+              borderRadius: BorderRadius.circular(16.r),
+              borderSide: const BorderSide(color: ColorsManager.mainBlue, width: 1.3),
             ),
         enabledBorder:
             enabledBorder ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(
-                16.r,
-              ),
-              borderSide: const BorderSide(
-                color: ColorsManager.lighterGrey,
-                width: 1.3,
-              ),
+              borderRadius: BorderRadius.circular(16.r),
+              borderSide: const BorderSide(color: ColorsManager.lighterGrey, width: 1.3),
             ),
-        hintStyle:
-            hintStyle ??
-            TextStyles.font14LightGreyRegular,
+        errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.red, width: 1.3),
+          borderRadius: BorderRadius.circular(16.r),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.red, width: 1.3),
+          borderRadius: BorderRadius.circular(16.r),
+        ),
+        hintStyle: hintStyle ?? TextStyles.font14LightGreyRegular,
         hintText: hintText,
         suffixIcon: suffixIcon,
       ),
       obscureText: isObscureText ?? false,
       style: TextStyles.font14DarkBlueMedium,
+      validator: (value) {
+        return validator(value);
+      },
     );
   }
 }

@@ -8,9 +8,7 @@ class DioFactory {
   static Dio? dio;
 
   static Dio getDio() {
-    Duration timeOut = const Duration(
-      seconds: 30,
-    );
+    Duration timeOut = const Duration(seconds: 30);
 
     if (dio == null) {
       dio = Dio();
@@ -33,21 +31,11 @@ class DioFactory {
   //   };
   // }
 
-  static void setTokenIntoHeaderAfterLogin(
-    String token,
-  ) {
-    dio?.options.headers = {
-      'Authorization': 'Bearer $token',
-    };
+  static void setTokenIntoHeaderAfterLogin(String token) {
+    dio?.options.headers = {'Authorization': 'Bearer $token'};
   }
 
   static void addDioInterceptor() {
-    dio?.interceptors.add(
-      PrettyDioLogger(
-        requestBody: true,
-        requestHeader: true,
-        responseHeader: true,
-      ),
-    );
+    dio?.interceptors.add(PrettyDioLogger(requestBody: true, requestHeader: true, responseHeader: true));
   }
 }

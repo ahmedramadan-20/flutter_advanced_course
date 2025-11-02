@@ -9,26 +9,17 @@ class DoctorImageAndText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        SvgPicture.asset(
-          "assets/svgs/docdoc_logo_low_opacity.svg",
-        ),
+        SvgPicture.asset("assets/svgs/docdoc_logo_low_opacity.svg"),
         Container(
           foregroundDecoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                Colors.white,
-                Colors.white.withValues(
-                  alpha: 0.0,
-                ),
-              ],
+              colors: [Colors.white, Colors.white.withValues(alpha: 0.0)],
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
               stops: const [0.14, 0.4],
             ),
           ),
-          child: Image.asset(
-            "assets/images/onboarding_doctor.png",
-          ),
+          child: Image.asset("assets/images/onboarding_doctor.png"),
         ),
         Positioned(
           bottom: 30,
@@ -37,8 +28,7 @@ class DoctorImageAndText extends StatelessWidget {
           child: Text(
             "Best Doctor\nAppointment App",
             textAlign: TextAlign.center,
-            style: TextStyles.font32BlueBold
-                .copyWith(height: 1.4),
+            style: TextStyles.font32BlueBold.copyWith(height: 1.4),
           ),
         ),
       ],
