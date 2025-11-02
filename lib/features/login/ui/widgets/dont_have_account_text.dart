@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/theming/styles.dart';
 
-class DontHaveAccountText
-    extends StatelessWidget {
+class DontHaveAccountText extends StatelessWidget {
   const DontHaveAccountText({super.key});
 
   @override
@@ -12,15 +11,8 @@ class DontHaveAccountText
       textAlign: TextAlign.center,
       text: TextSpan(
         children: [
-          TextSpan(
-            text: 'Don\'t have an account?',
-            style:
-                TextStyles.font13DarkBlueRegular,
-          ),
-          TextSpan(
-            text: ' Sign Up',
-            style: TextStyles.font13BlueSemiBold,
-          ),
+          TextSpan(text: 'Don\'t have an account?', style: TextStyles.font13DarkBlueRegular),
+          TextSpan(text: ' Sign Up', style: TextStyles.font13BlueSemiBold),
         ],
       ),
     );

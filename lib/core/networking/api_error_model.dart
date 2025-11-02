@@ -6,14 +6,8 @@ class ApiErrorModel {
   final int? code;
   final String? message;
 
-  ApiErrorModel({
-    this.code,
-    required this.message,
-  });
+  ApiErrorModel({this.code, required this.message});
 
-  factory ApiErrorModel.fromJson(
-    Map<String, dynamic> json,
-  ) => _$ApiErrorModelFromJson(json);
-  Map<String, dynamic> toJson() =>
-      _$ApiErrorModelToJson(this);
+  factory ApiErrorModel.fromJson(Map<String, dynamic> json) => _$ApiErrorModelFromJson(json);
+  Map<String, dynamic> toJson() => _$ApiErrorModelToJson(this);
 }

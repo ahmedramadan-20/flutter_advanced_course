@@ -11,26 +11,18 @@ class GetStartedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        context.pushnamed(Routes.loginScreen);
+        context.pushNamed(Routes.loginScreen);
       },
 
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.blue,
-        tapTargetSize:
-            MaterialTapTargetSize.shrinkWrap,
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         maximumSize: Size.fromHeight(50.h),
         minimumSize: Size.fromHeight(50.h),
 
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-            10.r,
-          ),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.r)),
       ),
-      child: Text(
-        "Get Started",
-        style: TextStyles.font16WhiteMedium,
-      ),
+      child: Text("Get Started", style: TextStyles.font16WhiteMedium),
     );
   }
 }
