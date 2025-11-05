@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_course/core/helpers/spacing.dart';
 
+import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
 
 class PasswordValidations extends StatelessWidget {
-  final bool hasLowercase;
-  final bool hasUppercase;
+  final bool hasLowerCase;
+  final bool hasUpperCase;
   final bool hasSpecialCharacters;
-  final bool hasNumbers;
+  final bool hasNumber;
   final bool hasMinLength;
   const PasswordValidations({
     super.key,
-    re,
-    required this.hasLowercase,
-    required this.hasUppercase,
+    required this.hasLowerCase,
+    required this.hasUpperCase,
     required this.hasSpecialCharacters,
-    required this.hasNumbers,
+    required this.hasNumber,
     required this.hasMinLength,
   });
 
@@ -24,15 +23,15 @@ class PasswordValidations extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        buildValidationRow('At least one lowercase letter', hasLowercase),
+        buildValidationRow('At least 1 lowercase letter', hasLowerCase),
         verticalSpace(2),
-        buildValidationRow('At least one uppercase letter', hasUppercase),
+        buildValidationRow('At least 1 uppercase letter', hasUpperCase),
         verticalSpace(2),
-        buildValidationRow('At least one special character', hasSpecialCharacters),
+        buildValidationRow('At least 1 special character', hasSpecialCharacters),
         verticalSpace(2),
-        buildValidationRow('At least one number', hasNumbers),
+        buildValidationRow('At least 1 number', hasNumber),
         verticalSpace(2),
-        buildValidationRow('Minimum 8 characters', hasMinLength),
+        buildValidationRow('At least 8 characters long', hasMinLength),
       ],
     );
   }
@@ -45,7 +44,7 @@ class PasswordValidations extends StatelessWidget {
         Text(
           text,
           style: TextStyles.font13DarkBlueRegular.copyWith(
-            decoration: hasValidated ? TextDecoration.lineThrough : TextDecoration.none,
+            decoration: hasValidated ? TextDecoration.lineThrough : null,
             decorationColor: Colors.green,
             decorationThickness: 2,
             color: hasValidated ? ColorsManager.grey : ColorsManager.darkBlue,
