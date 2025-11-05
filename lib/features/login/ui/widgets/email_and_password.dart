@@ -82,16 +82,17 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
           ),
           verticalSpace(24),
           PasswordValidations(
-            hasLowercase: hasLowercase,
-            hasUppercase: hasUppercase,
+            hasLowerCase: hasLowercase,
+            hasUpperCase: hasUppercase,
             hasSpecialCharacters: hasSpecialCharacters,
-            hasNumbers: hasNumbers,
+            hasNumber: hasNumbers,
             hasMinLength: hasMinLength,
           ),
         ],
       ),
     );
   }
+
   @override
   void dispose() {
     passwordController.dispose();
