@@ -1,0 +1,9 @@
+feat(android): Integrate fastlane for Firebase App Distribution
+
+This commit introduces fastlane to the Android project to automate the build and deployment process to Firebase App Distribution.
+
+Key changes include:
+- Added `Gemfile` and `Gemfile.lock` to manage fastlane dependencies.
+- Configured a `firebase_distribution` lane in the `Fastfile` to build and upload the release APK.
+- Moved the `build_runner` dependency to `dev_dependencies` in `pubspec.yaml` to ensure it's only used for development.
+- Bumped the application version to `1.0.1+1`.
