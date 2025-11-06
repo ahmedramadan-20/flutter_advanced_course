@@ -18,7 +18,5 @@ platform :android do
     testers: "sasa.bas38@gmail.com",
     release_notes: release_notes_text
   )
-  end
-
-  
+  end  
 end
