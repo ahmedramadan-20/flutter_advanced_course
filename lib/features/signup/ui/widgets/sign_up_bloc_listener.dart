@@ -9,7 +9,9 @@ import '../../logic/cubit/signup_cubit.dart';
 import '../../logic/cubit/signup_state.dart';
 
 class SignupBlocListener extends StatelessWidget {
-  const SignupBlocListener({super.key});
+  final Widget child;
+
+  const SignupBlocListener({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,7 @@ class SignupBlocListener extends StatelessWidget {
           signupLoading: () {
             showDialog(
               context: context,
+              barrierDismissible: false,
               builder: (context) => const Center(child: CircularProgressIndicator(color: ColorsManager.mainBlue)),
             );
           },
@@ -32,7 +35,7 @@ class SignupBlocListener extends StatelessWidget {
           },
         );
       },
-      child: const SizedBox.shrink(),
+      child: child,
     );
   }
 
@@ -47,11 +50,7 @@ class SignupBlocListener extends StatelessWidget {
           ),
           actions: <Widget>[
             TextButton(
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.blue,
-                disabledForegroundColor: Colors.grey.withOpacity(0.38),
-              ),
+              style: TextButton.styleFrom(foregroundColor: Colors.white, backgroundColor: Colors.blue),
               onPressed: () {
                 context.pushNamed(Routes.loginScreen);
               },
